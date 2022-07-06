@@ -14,6 +14,16 @@ func vals() (int, int) {
 	return 3, 7
 }
 
+func sum(nums ...int) {
+	fmt.Print(nums, " ")
+	total := 0
+
+	for _, num := range nums {
+		total += num
+	}
+	fmt.Println(total)
+}
+
 func main() {
 	res := plus(1, 2)
 	fmt.Println("1 + 2 = ", res)
@@ -27,4 +37,10 @@ func main() {
 
 	_, c := vals()
 	fmt.Println(c)
+
+	sum(1, 2)
+	sum(1, 2, 3)
+
+	nums := []int{1, 2, 3, 4}
+	sum(nums...)
 }
