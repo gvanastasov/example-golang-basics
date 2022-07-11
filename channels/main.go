@@ -10,4 +10,12 @@ func main() {
 	msg := <-messages
 
 	fmt.Println(msg)
+
+	buffer := make(chan string, 2)
+
+	buffer <- "buffered"
+	buffer <- "channel"
+
+	fmt.Println(<-buffer)
+	fmt.Println(<-buffer)
 }
